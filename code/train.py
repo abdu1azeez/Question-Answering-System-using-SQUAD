@@ -19,6 +19,8 @@ logging.basicConfig(level=logging.INFO)
 # tf.logging.set_verbosity(tf.logging.ERROR)
 logging.getLogger("tensorflow").setLevel(logging.ERROR)
 
+epochs = input('Number of Epochs to run: ')
+
 model_name = '/baseline4'
 tf.app.flags.DEFINE_float("base_lr", 0.001, "Basic learning rate.")
 tf.app.flags.DEFINE_float("decay_rate", 0.9, "Decay ratio after a certain batch number.")
@@ -26,7 +28,7 @@ tf.app.flags.DEFINE_integer("decay_number", 600, "Anneal learning rate after thi
 tf.app.flags.DEFINE_float("max_grad_norm", 10.0, "Clip gradients to this norm.")
 tf.app.flags.DEFINE_float("dropout", 0.4, "Fraction of units randomly dropped on non-recurrent connections.")
 tf.app.flags.DEFINE_integer("batch_size", 128, "Batch size to use during training.")
-tf.app.flags.DEFINE_integer("epochs", 15, "Number of epochs to train.")
+tf.app.flags.DEFINE_integer("epochs", epochs, "Number of epochs to train.")
 tf.app.flags.DEFINE_integer("state_size", 100, "Size of each model layer.")
 tf.app.flags.DEFINE_integer("output_size", 2, "The output size of your model.")
 tf.app.flags.DEFINE_integer("embedding_size", 100, "Size of the pretrained vocabulary.")
