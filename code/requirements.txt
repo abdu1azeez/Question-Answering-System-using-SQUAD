@@ -3,4 +3,4 @@ joblib
 nltk >= 3.2.2
 tqdm
 pyprind
-tensorflow-gpu==1.13.1
+tensorflow-gpu==2.7.2
